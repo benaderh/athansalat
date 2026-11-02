@@ -1,0 +1,45 @@
+name: Build APK
+
+# Se déclenche sur chaque push vers main et sur les pull requests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Permet de lancer manuellement depuis l'onglet Actions
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Debug APK
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupérer le code source
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      # 2. Installer JDK 17 (requis par AGP 8.x)
+      - name: Configurer JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      # 3. Donner les permissions d'exécution à gradlew
+      - name: Permissions gradlew
+        run: chmod +x gradlew
+
+      # 4. Compiler l'APK debug
+      - name: Build APK debug
+        run: ./gradlew assembleDebug
+
+      # 5. Uploader l'APK comme artefact téléchargeable
+      - name: Uploader APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: AthanSalat-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 30
