@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".ModifH">
+
+        <!-- Villes -->
+        <TextView
+            android:id="@+id/v_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:padding="4dp"
+            android:textColor="#FEFEFE"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ville 1" />
+
+        <TextView
+            android:id="@+id/v_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:padding="4dp"
+            android:textColor="#FEFEFE"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ville 2" />
+
+        <TextView
+            android:id="@+id/v_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:padding="4dp"
+            android:textColor="#FEFEFE"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ville 3" />
+
+        <!-- Dates -->
+        <TextView
+            android:id="@+id/d_gre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textColor="#FEFEFE"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_2"
+            tools:text="Dimanche 2024/01/21" />
+
+        <TextView
+            android:id="@+id/d_hij"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FEFEFE"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/d_gre"
+            tools:text="10 Rajab 1445" />
+
+        <TextView
+            android:id="@+id/t_djc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#fefefe"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/d_hij"
+            tools:text="14:35:22" />
+
+        <!-- Ligne de séparation visuelle -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#80FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/t_djc" />
+
+        <!-- Horaires - Fajr -->
+        <include layout="@layout/row_modif_h" android:id="@+id/row_fajr"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Horaires - Shorouq -->
+        <include layout="@layout/row_modif_h" android:id="@+id/row_shorouq"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/row_fajr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Horaires - Dhuhr -->
+        <include layout="@layout/row_modif_h" android:id="@+id/row_dhuhr"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/row_shorouq"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Horaires - Asr -->
+        <include layout="@layout/row_modif_h" android:id="@+id/row_asr"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/row_dhuhr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Horaires - Maghrib -->
+        <include layout="@layout/row_modif_h" android:id="@+id/row_maghrib"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/row_asr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Horaires - Isha -->
+        <include layout="@layout/row_modif_h" android:id="@+id/row_isha"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/row_maghrib"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <!-- Boutons de navigation -->
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="سابق"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اليوم"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تالي"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

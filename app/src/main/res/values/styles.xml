@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Thème de base de l'application.
+        Hérite d'un thème Material Components, ce qui garantit que
+        tous les attributs modernes (comme ?attr/...) sont disponibles.
+    -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Personnalisez vos couleurs principales ici -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Correction 1 : Rendre le menu popup lisible (fond sombre, texte blanc) -->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <item name="popupMenuStyle">@style/PopupMenuStyle</item>
+        <item name="android:popupMenuStyle">@style/PopupMenuStyle</item>
+        <item name="android:itemTextAppearance">@style/PopupMenuTextAppearance</item>
+
+        <!-- Correction 2 : Ne pas masquer la barre de navigation du système -->
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:navigationBarColor">@color/background_black</item>
+    </style>
+
+    <!-- Style pour le menu popup overflow -->
+    <style name="OverflowMenuStyle" parent="Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Style pour les popups de menu -->
+    <style name="PopupMenuStyle" parent="Widget.MaterialComponents.PopupMenu">
+        <item name="android:popupBackground">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Apparence du texte dans les menus popup -->
+    <style name="PopupMenuTextAppearance" parent="@android:style/TextAppearance.Widget.TextView.PopupMenu">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

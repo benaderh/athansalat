@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    tools:context=".ModifA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Section Fajr -->
+        <include layout="@layout/section_alarm" android:id="@+id/section_fajr"/>
+        <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+        <!-- Section Dhuhr -->
+        <include layout="@layout/section_alarm" android:id="@+id/section_dhuhr"/>
+        <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+        <!-- Section Asr -->
+        <include layout="@layout/section_alarm" android:id="@+id/section_asr"/>
+        <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+        <!-- Section Maghrib -->
+        <include layout="@layout/section_alarm" android:id="@+id/section_maghrib"/>
+        <View android:layout_width="match_parent" android:layout_height="8dp"/>
+
+        <!-- Section Isha -->
+        <include layout="@layout/section_alarm" android:id="@+id/section_isha"/>
+
+    </LinearLayout>
+</ScrollView>

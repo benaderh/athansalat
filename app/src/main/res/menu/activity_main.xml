@@ -1,0 +1,37 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_alarms"
+        android:title="@string/menu_alarms"/>
+    <item
+        android:id="@+id/menu_modif_d"
+        android:title="@string/menu_modif_d"/>
+    <item
+        android:id="@+id/menu_modif_h"
+        android:title="@string/menu_modif_h"/>
+    <item
+        android:id="@+id/menu_modif_v"
+        android:title="@string/menu_modif_v"/>
+    <item
+        android:id="@+id/menu_favourite"
+        android:title="@string/menu_favourite"/>
+    <item
+        android:id="@+id/menu_autres"
+        android:title="@string/menu_autres"/>
+    <item
+        android:id="@+id/menu_excel1"
+        android:title="@string/menu_excel1"/>
+    <item
+        android:id="@+id/menu_excel2"
+        android:title="@string/menu_excel2"/>
+    <item
+        android:id="@+id/menu_gs1"
+        android:title="@string/menu_gs1"/>
+    <item
+        android:id="@+id/menu_gs2"
+        android:title="@string/menu_gs2"/>
+    <item
+        android:id="@+id/menu_about"
+        android:title="@string/menu_about"/>
+</menu>

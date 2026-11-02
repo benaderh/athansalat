@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ============================================================ -->
+    <!-- PERMISSIONS DE BASE                                          -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- ============================================================ -->
+    <!-- BOOT COMPLETED : reprogrammer les alarmes après redémarrage  -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- ============================================================ -->
+    <!-- ALARMES EXACTES (Android 12 / API 31+)                      -->
+    <!-- SCHEDULE_EXACT_ALARM : nécessite approbation utilisateur     -->
+    <!-- USE_EXACT_ALARM      : accord automatique (Android 13 / 33+) -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- ============================================================ -->
+    <!-- NOTIFICATIONS (Android 13 / API 33+)                        -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- ============================================================ -->
+    <!-- FOREGROUND SERVICE : obligatoire pour AlarmService           -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
+    <!-- ============================================================ -->
+    <!-- OPTIMISATION BATTERIE : demander l'exemption                 -->
+    <!-- Nécessaire pour que les alarmes fonctionnent quand           -->
+    <!-- l'écran est éteint (Doze mode)                              -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- ============================================================ -->
+    <!-- STOCKAGE (limité aux versions concernées)                    -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="مواقيت الصلاة المجدولة"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="34">
+
+        <!-- ======================================================== -->
+        <!-- ACTIVITÉS                                                 -->
+        <!-- ======================================================== -->
+        <activity
+            android:name=".MainActivity"
+            android:label="مواقيت الصلاة المجدولة"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".FavouritesV"  android:label="اختر ثلاثة مدن" />
+        <activity android:name=".Autres"        android:label="إعدادات أخرى" />
+        <activity android:name=".ModifD"        android:label="تغيير التاريخ الهجري" />
+        <activity android:name=".ModifA"        android:label="التنبيهات" />
+        <activity android:name=".ModifH"        android:label="تغيير أوقات الصلاة" />
+        <activity android:name=".ModifV"        android:label="تغيير أسماء المدن" />
+        <activity android:name=".AboutApp"      android:label="مساعدة" />
+        <activity android:name=".ModifVUp"      android:label="ادخال الإسم الجديد" />
+
+        <!-- Écran d'alarme plein écran (affiché même quand l'écran est verrouillé) -->
+        <activity
+            android:name=".Alarm"
+            android:label="منبه"
+            android:exported="false"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
+
+        <!-- ======================================================== -->
+        <!-- RECEIVER : écoute les alarmes ET le reboot               -->
+        <!-- exported="false" : sécurité (réception interne seulement)-->
+        <!-- MAIS le BOOT_COMPLETED requiert exported="true"          -->
+        <!-- ======================================================== -->
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <!-- Alarme système (depuis AlarmManager) -->
+                <action android:name="android.intent.action.ALARM_CLOCK" />
+                <!-- Après redémarrage normal -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- Après redémarrage en mode Direct Boot (Android 7+) -->
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ======================================================== -->
+        <!-- SERVICE EN AVANT-PLAN : joue le son de l'athan          -->
+        <!-- foregroundServiceType="mediaPlayback" obligatoire        -->
+        <!-- pour les services audio en avant-plan (Android 10+)     -->
+        <!-- ======================================================== -->
+        <service
+            android:name=".AlarmService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+    </application>
+</manifest>

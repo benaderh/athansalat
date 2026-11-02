@@ -1,0 +1,76 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true">
+    <RelativeLayout
+        android:background="@color/background_black"
+        android:paddingLeft="15dp"
+        android:paddingTop="0dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+        <!-- Vos TextViews et Buttons restent les mêmes -->
+        <TextView android:textSize="30.0sp" android:textColor="#FEFEFE" android:gravity="center" android:id="@+id/d_gre" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="التاريخ الميلادي" android:layout_alignParentLeft="true" android:layout_below="@+id/v_1" android:layout_alignParentStart="true"/>
+        <TextView android:textSize="30.0sp" android:textColor="#FEFEFE" android:gravity="center" android:id="@+id/d_hij" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="التاريخ الهجري" android:layout_below="@+id/d_gre" android:layout_alignParentLeft="true"/>
+        <TextView android:textSize="60.0sp" android:textColor="#fefefe" android:gravity="center" android:id="@+id/t_djc" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="الساعة" android:layout_below="@+id/d_hij" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="50.0sp" android:textStyle="bold" android:textColor="#ffffff99" android:gravity="center" android:id="@+id/t_faj" android:onClick="onClick" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="00:00" android:layout_below="@+id/t_djc" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="35.0sp" android:textColor="#00ff00" android:gravity="center" android:id="@+id/bf" tools:text="00:00" android:layout_below="@+id/t_djc" android:layout_alignParentRight="true" android:layout_above="@+id/t_doh"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#ff0000" android:gravity="center" android:id="@+id/af" tools:text="00:00" android:layout_below="@+id/t_djc" android:layout_alignParentLeft="true" android:layout_above="@+id/ad"/>
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="50.0sp" android:textStyle="bold" android:textColor="#ffffff99" android:gravity="center" android:id="@+id/t_doh" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="00:00" android:layout_below="@+id/t_faj" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#00ff00" android:gravity="center" android:id="@+id/bd" tools:text="00:00" android:layout_below="@+id/bf" android:layout_alignParentRight="true" android:layout_above="@+id/ba"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#ff0000" android:gravity="center" android:id="@+id/ad" android:layout_alignBottom="@+id/t_doh" tools:text="00:00" android:layout_below="@+id/t_faj" android:layout_alignParentLeft="true"/>
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="50.0sp" android:textStyle="bold" android:textColor="#ffffff99" android:gravity="center" android:id="@+id/t_asr" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="00:00" android:layout_below="@+id/t_doh" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#00ff00" android:gravity="center" android:id="@+id/ba" tools:text="00:00" android:layout_below="@+id/t_doh" android:layout_alignParentRight="true" android:layout_above="@+id/t_mag"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#ff0000" android:gravity="center" android:id="@+id/aa" android:layout_alignBottom="@+id/t_asr" android:layout_alignLeft="@+id/ad" android:layout_alignTop="@+id/t_asr" tools:text="00:00"/>
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="50.0sp" android:textStyle="bold" android:textColor="#ffffff99" android:gravity="center" android:id="@+id/t_mag" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="00:00" android:layout_below="@+id/t_asr" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#00ff00" android:gravity="center" android:id="@+id/bm" tools:text="00:00" android:layout_below="@+id/ba" android:layout_alignParentRight="true" android:layout_above="@+id/t_ish"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#ff0000" android:gravity="center" android:id="@+id/am" android:layout_alignBottom="@+id/t_mag" android:layout_alignLeft="@+id/aa" android:layout_alignTop="@+id/t_mag" tools:text="00:00"/>
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="50.0sp" android:textStyle="bold" android:textColor="#ffffff99" android:gravity="center" android:id="@+id/t_ish" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="00:00" android:layout_below="@+id/am" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#00ff00" android:gravity="center" android:id="@+id/bi" tools:text="00:00" android:layout_alignBottom="@+id/t_ish" android:layout_alignParentRight="true" android:layout_below="@+id/t_mag"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="40.0sp" android:textColor="#ff0000" android:gravity="center" android:id="@+id/ai" android:layout_alignBottom="@+id/t_ish" android:layout_alignLeft="@+id/am" android:layout_below="@+id/am" tools:text="00:00"/>
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="سابق" />
+
+        <!-- CORRECTION ICI : L'attribut 'android:onClick="true"' a été supprimé -->
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="left"
+            android:text="تالي" />
+
+        <!-- CORRECTION ICI : L'attribut 'android:onClick="true"' a été supprimé -->
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="اليوم"
+            android:visibility="invisible" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:id="@+id/linearLayout"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15.0sp" android:id="@+id/v_1" android:textColor="#FEFEFE" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:background="#000000"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15.0sp" android:layout_below="@+id/linearLayout" android:layout_alignLeft="@+id/retour" android:layout_alignStart="@+id/retour" android:id="@+id/v_2" android:textColor="#FEFEFE" android:layout_alignParentTop="true" android:background="#000000"/>
+
+        <TextView
+            android:id="@+id/v_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#000000"
+            android:textColor="#FEFEFE"
+            android:textSize="15.0sp" />
+    </RelativeLayout>
+</ScrollView>

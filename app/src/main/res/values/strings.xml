@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">مواقيت الصلاة المجدولة</string>
+
+    <string name="menu_favourite">المدن المفضلة</string>
+    <string name="menu_modif_d">تغيير التاريخ الهجري</string>
+    <string name="menu_modif_h">تغيير أوقات الصلاة</string>
+    <string name="menu_modif_v">تغيير أسماء المدن</string>
+    <string name="menu_alarms">التنبيهات</string>
+    <string name="menu_autres">أخرى</string>
+    <string name="menu_excel1">تحديث المواقيت بـ xls</string>
+    <string name="menu_excel2">تحديث التاريخ (هـ) بـ xls</string>
+    <string name="menu_gs1">تحديث المواقيت بالأنترنت</string>
+    <string name="menu_gs2">تحديث التاريخ (هـ) بالأنترنت</string>
+
+    <string name="menu_about">حول البرنامج</string>
+
+
+    <string name="title_activity_main">مواقيت الصلاة</string>
+
+    <string name="about1">مواقيت الصلاة</string>
+
+    <string name="Date">التاريخ الميلادي</string>
+
+
+    <string name="txt01">مواقيت الصلاة المجدولة النسخة 1.0</string>
+    <string name="txt02">هشام  بن نادر   عين البيضاء   الجزائر</string>
+    <string name="txt03">البريد الإلكتروني:</string>
+    <string name="txt031"><u>benaderh@gmail.com</u></string>
+    <string name="txt04">فيسبوك:</string>
+    <string name="txt041"><u>https://www.facebook.com/hichemb.hb.1</u></string>
+    <string name="txt06">مواقيت الصلاة الجدولية تعتمد على الجداول السنوية لمواقيت الصلاة المعدة من طرف الهيئات المشرفة على المساجد في مختلف الدول الإسلامية، و بالتالي فهي لا تعتمد على خطوط الطول و العرض مثل أغلبية برامج مواقيت الصلاة الحالية.</string>
+    <string name="txt07">- الواجهة الرئيسية تشتمل على خمس أوقات رفقة ما مضى من الوقت على الصلاة السابقة، و ما تبقى للصلاة التالية (الضغط على التاريخ الهجري يعطيك وقت الشروق).</string>
+    <string name="txt08">- من الواجهة الرئيسية يمكنك الإختيار بين ثلاث مدن مفضلة، و الأنتفال للأيام السابقة أو اللاحقة.</string>
+    <string name="txt09">- منبهين لكل صلاة مع الوضع الصامت و العودة للوضع الأولي (فإن كان الوضع الأولي هزاز، فعند انتهاء مدة الوضع الصامت سيعود الجهاز لوضع هزاز ) مع امكانية اختيار المنبه و درجة الصوت لكل منبه.</string>
+    <string name="txt10">- إمكانية تغيير التاريخ الهجري بضغطة مطولة وفق رزنامة التاريخ الهجري و ليس تغيير مؤفت لكل شهر.</string>
+    <string name="txt11">- إمكانية تعديل أوقات الصلاة لسنة كاملة وفق رزنامة أو جداول المواقيت لمدينتك و الأنتقال بين الأيام مما يسهل عليك عملية تعديل المواقيت.</string>
+    <string name="txt12">- إمكانية تغيير اسم المدينة بضغطة خفيفة أو حذفها بضغطة مطولة.</string>
+    <string name="txt13">- قائمة المدن تتصدرها ثلاث مدن أساسية تجدها في الواجهة الرئيسية، يمكنك إعادة ترتيب المدن بما في ذلك المدن الرئيسية بالضغط عليها.</string>
+    <string name="txt14">- إعدادت أخرى تمكنك من تغيير حجم الخط، جعل أذان الظهر ثابت، جعل أذان الجمعة ثابت مع اختيار الوقت الملائم.</string>
+    <string name="txt15">--- ملاحظة: المواقيت الأولية أخذت من الجدول السنوي لمواقيت الصلاة لوزارة الشؤون الدينية والأوقاف الجزائرية لسنة 1438 هـ الموافق لـ: 2018/2017 م</string>
+
+
+
+
+</resources>

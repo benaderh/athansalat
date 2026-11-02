@@ -1,0 +1,26 @@
+# Build outputs
+*.iml
+.gradle/
+build/
+/local.properties
+/.idea/
+.DS_Store
+/captures
+.externalNativeBuild/
+.cxx/
+
+# APK files
+*.apk
+*.ap_
+*.aab
+
+# Generated files
+gen/
+out/
+
+# Local configuration
+local.properties
+
+# Keystore files
+*.jks
+*.keystore
